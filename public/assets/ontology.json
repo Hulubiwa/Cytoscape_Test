@@ -1,0 +1,36 @@
+{
+  "classes": [
+    { "id": "Vehicule_0", "label": "Vehicule", "attributes": {} },
+    { "id": "Voiture_0", "label": "Voiture", "attributes": { "Marque": "Audi", "Modèle": "A4" }},
+    { "id": "Automobile_0", "label": "Automobile", "attributes": { "Marque": "Audi", "Modèle": "A4" }},
+    { "id": "Camion_0", "label": "Camion", "attributes": { "Marque": "Volvo", "Modèle": "FH" }},
+    { "id": "PoidsLourd_0", "label": "PoidsLourd", "attributes": { "Marque": "Volvo", "Modèle": "FH" }},
+    { "id": "Moto_0", "label": "Moto", "attributes": { "Marque": "Yamaha", "Modèle": "MT-07" }},
+    { "id": "Scooter_0", "label": "Scooter", "attributes": { "Marque": "Piaggio", "Modèle": "MP3" }},
+    { "id": "Quad_0", "label": "Quad", "attributes": { "Marque": "Polaris", "Modèle": "Sportsman" }},
+    { "id": "SUV_0", "label": "SUV", "attributes": { "Marque": "BMW", "Modèle": "X5" }},
+    { "id": "Berline_0", "label": "Berline", "attributes": { "Marque": "Mercedes", "Modèle": "Classe E" }},
+    { "id": "Coupé_0", "label": "Coupé", "attributes": { "Marque": "Ford", "Modèle": "Mustang" }},
+    { "id": "PickUp_0", "label": "PickUp", "attributes": { "Marque": "Toyota", "Modèle": "Hilux" }},
+    { "id": "SemiRemorque_0", "label": "SemiRemorque", "attributes": { "Marque": "MAN", "Modèle": "TGX" }}
+  ],
+  "relations": [
+    { "type": "inheritance", "source": "Voiture_0", "target": "Vehicule_0" },
+    { "type": "inheritance", "source": "Camion_0", "target": "Vehicule_0" },
+    { "type": "inheritance", "source": "Moto_0", "target": "Vehicule_0" },
+    { "type": "inheritance", "source": "Scooter_0", "target": "Moto_0" },
+    { "type": "inheritance", "source": "Quad_0", "target": "Vehicule_0" },
+    { "type": "inheritance", "source": "SUV_0", "target": "Voiture_0" },
+    { "type": "inheritance", "source": "Berline_0", "target": "Voiture_0" },
+    { "type": "inheritance", "source": "Coupé_0", "target": "Voiture_0" },
+    { "type": "inheritance", "source": "PickUp_0", "target": "Camion_0" },
+    { "type": "inheritance", "source": "SemiRemorque_0", "target": "PoidsLourd_0" },
+
+    { "type": "equivalence", "source": "Voiture_0", "target": "Automobile_0" },
+    { "type": "equivalence", "source": "Camion_0", "target": "PoidsLourd_0" },
+
+    { "type": "disjoint", "source": "Moto_0", "target": "Voiture_0" },
+    { "type": "disjoint", "source": "Quad_0", "target": "Berline_0" },
+    { "type": "disjoint", "source": "Coupé_0", "target": "SemiRemorque_0" }
+  ]
+}

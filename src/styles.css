@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+/* Styles for the dialog */
+.my-dialog-panel .mat-mdc-dialog-surface {
+  padding: 0px 10px 10px 10px !important;
+  border: 3px solid black !important;
+  border-radius: 12px !important;
+}
+
+.my-dialog-panel .mat-mdc-dialog-container {
+  border-radius: 0 !important;
+}
+

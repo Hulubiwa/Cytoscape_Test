@@ -1,0 +1,28 @@
+<div class="search-bar">
+  <div>
+      <input
+      type="text"
+      [(ngModel)]="searchQueryID"
+      (keyup.enter)="searchElements('id')"
+      placeholder="Search for a node by ID..."
+    />
+    <button (click)="searchElements('id')" style="margin-right: 10px">Search By Id</button>
+  </div>
+
+  <div>
+    <input
+      type="text"
+      [(ngModel)]="searchQueryName"
+      (keyup.enter)="searchElements('name')"
+      placeholder="Search for a node by name..."
+    />
+    <button (click)="searchElements('name')" style="margin-right: 20px">Search By Name</button>
+    <button (click)="stopBlinking()">Clear Search</button>
+  </div>
+
+
+</div>
+
+
+<div id="cy" style="width: 100%; height: 600px; border: 1px solid #ccc;"></div>
+

@@ -1,0 +1,22 @@
+<h4 mat-dialog-title>Id: {{ className }}</h4>
+
+<div mat-dialog-content>
+  
+    <mat-form-field appearance="fill" style="width: 300px;">
+      <mat-label>Choisir une option</mat-label>
+      <mat-select [(value)]="relation">
+        <mat-option
+          *ngFor="let rel of relations"
+          [value]="rel">
+          {{ rel }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close (click)="cancel()">Annuler</button>
+  <button mat-raised-button color="primary" (click)="save()">Enregistrer</button>
+  <button mat-button (click)="delete()">Supprimer</button>
+</div>
