@@ -1,59 +1,188 @@
-# ProjetCytoscape
+# 🚀 Projet Cytoscape Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
+Ce projet est une application **Angular** permettant de visualiser et manipuler des graphes d'ontologies via **Cytoscape.js**.  
+Elle inclut une interface de recherche et des interactions riches sur les nœuds et les arêtes.
 
-## Development server
+---
 
-To start a local development server, run:
+## ✨ Fonctionnalités
 
-```bash
-ng serve
-```
+- **Affichage dynamique d'ontologies**  
+  Chargement d'un fichier JSON (`ontology.json`) décrivant les classes et relations.  
+  Génération automatique des éléments du graphe.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Mise en forme personnalisée**  
+  Styles spécifiques pour les nœuds et les arêtes :  
+  - Équivalence (`≡`)  
+  - Héritage (`inherits`)  
+  - Disjonction (`disjoint`)  
+  Clignotement visuel lors de la recherche.
 
-## Code scaffolding
+- **Recherche**  
+  Par **nom** ou **ID**.  
+  Recentre et zoome automatiquement sur l'élément trouvé.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Dialogues interactifs**  
+  Double-clic sur un nœud : ouverture d'un dialogue d'informations.  
+  Double-clic sur une arête : édition du type de relation ou suppression.
 
-```bash
-ng generate component component-name
-```
+- **Mise en page automatique**  
+  Layout basé sur `cose-bilkent`.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 🧩 Technologies utilisées
 
-## Building
+- [Angular](https://angular.io/)
+- [Cytoscape.js](https://js.cytoscape.org/)
+- [cytoscape-cose-bilkent](https://github.com/cytoscape/cytoscape.js-cose-bilkent)
+- [Angular Material](https://material.angular.io/)
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## ⚙️ Prérequis
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- Node.js >= 18.x
+- npm
+- Docker
+- Docker Compose
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 📥 Installation
 
-```bash
-ng test
-```
+Clonez le dépôt :
 
-## Running end-to-end tests
+\`\`\`bash
+git clone <URL_DE_VOTRE_DEPOT>
+cd <nom_du_dossier>
+\`\`\`
 
-For end-to-end (e2e) testing, run:
+Installez les dépendances npm :
 
-```bash
-ng e2e
-```
+\`\`\`bash
+npm install
+\`\`\`
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 🛠️ Build de l'application
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Générez la version de production d'Angular :
+
+\`\`\`bash
+npm run build
+\`\`\`
+
+Le build sera disponible dans :
+
+\`dist/projet-cytoscape/\`
+
+---
+
+## 🐳 Utilisation avec Docker Compose
+
+> **💡 Conseil** : vérifiez que votre \`docker-compose.yml\` est bien configuré (exemple ci-dessous).
+
+### Exemple \`docker-compose.yml\`
+
+\`\`\`yaml
+version: "3.9"
+
+services:
+  angular-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    container_name: projet-cytoscape
+\`\`\`
+
+---
+
+### 📦 Construction de l'image
+
+Depuis la racine du projet :
+
+\`\`\`bash
+docker compose build
+\`\`\`
+
+---
+
+### ▶️ Démarrage de l'application
+
+\`\`\`bash
+docker compose up
+\`\`\`
+
+L'application est accessible sur :
+
+\`http://localhost:8080\`
+
+---
+
+### 🛑 Arrêt du conteneur
+
+\`\`\`bash
+docker compose down
+\`\`\`
+
+---
+
+## 🧭 Commandes principales
+
+| Action                          | Commande                                       |
+|---------------------------------|------------------------------------------------|
+| Installation des dépendances    | \`npm install\`                                  |
+| Build Angular                   | \`npm run build\`                                |
+| Build de l'image Docker         | \`docker compose build\`                         |
+| Lancer le conteneur             | \`docker compose up\`                            |
+| Arrêter le conteneur            | \`docker compose down\`                          |
+
+---
+
+## 📁 Structure du projet
+
+\`\`\`
+src/
+  app/
+    graph/           # Composant principal du graphe
+    node-dialog/     # Composant de dialogue des nœuds
+    edge-dialog/     # Composant de dialogue des arêtes
+assets/
+  ontology.json      # Ontologie chargée au démarrage
+Dockerfile           # Build de l'image Nginx
+docker-compose.yml   # Orchestration du conteneur
+\`\`\`
+
+---
+
+## ✨ Exemple d'utilisation
+
+- **Rechercher un nœud par nom ou ID** depuis l'interface.
+- **Double-cliquer** sur un nœud ou une arête pour afficher ou modifier ses propriétés.
+- **Supprimer** une arête en choisissant \`NONE_TYPE\` dans le dialogue.
+
+---
+
+## 📝 Licence
+
+Ce projet est distribué sous licence MIT.  
+Vous pouvez l'utiliser, le modifier et le redistribuer librement.
+
+---
+
+## 💡 Auteur
+
+Projet développé par **[Votre Nom ou Organisation]**.
+
+---
+
+## 🙌 Contributions
+
+Les contributions sont les bienvenues !  
+N'hésitez pas à ouvrir une issue ou une pull request.
