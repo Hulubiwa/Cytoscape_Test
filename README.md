@@ -60,21 +60,6 @@ git clone <https://github.com/Hulubiwa/Cytoscape_Test>
 \`\`\`
 
 
----
-
-## 🛠️ Build de l'application
-
-Générez la version de production d'Angular :
-
-\`\`\`bash
-npm run build
-\`\`\`
-
-Le build sera disponible dans :
-
-\`dist/projet-cytoscape/\`
-
----
 
 ## 🐳 Utilisation avec Docker Compose
 
