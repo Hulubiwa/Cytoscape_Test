@@ -56,15 +56,9 @@ Elle inclut une interface de recherche et des interactions riches sur les nœuds
 Clonez le dépôt :
 
 \`\`\`bash
-git clone <URL_DE_VOTRE_DEPOT>
-cd <nom_du_dossier>
+git clone <https://github.com/Hulubiwa/Cytoscape_Test>
 \`\`\`
 
-Installez les dépendances npm :
-
-\`\`\`bash
-npm install
-\`\`\`
 
 ---
 
@@ -84,39 +78,16 @@ Le build sera disponible dans :
 
 ## 🐳 Utilisation avec Docker Compose
 
-> **💡 Conseil** : vérifiez que votre \`docker-compose.yml\` est bien configuré (exemple ci-dessous).
-
-### Exemple \`docker-compose.yml\`
-
-\`\`\`yaml
-version: "3.9"
-
-services:
-  angular-app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8080:80"
-    container_name: projet-cytoscape
-\`\`\`
 
 ---
 
-### 📦 Construction de l'image
-
-Depuis la racine du projet :
-
-\`\`\`bash
-docker compose build
-\`\`\`
-
----
 
 ### ▶️ Démarrage de l'application
 
-\`\`\`bash
-docker compose up
+Lancez Docker
+
+\`\`\`
+docker compose up --build
 \`\`\`
 
 L'application est accessible sur :
@@ -165,20 +136,12 @@ docker-compose.yml   # Orchestration du conteneur
 
 - **Rechercher un nœud par nom ou ID** depuis l'interface.
 - **Double-cliquer** sur un nœud ou une arête pour afficher ou modifier ses propriétés.
-- **Supprimer** une arête en choisissant \`NONE_TYPE\` dans le dialogue.
-
----
-
-## 📝 Licence
-
-Ce projet est distribué sous licence MIT.  
-Vous pouvez l'utiliser, le modifier et le redistribuer librement.
 
 ---
 
 ## 💡 Auteur
 
-Projet développé par **[Votre Nom ou Organisation]**.
+Projet développé par **QAEZE Noël**.
 
 ---
 
